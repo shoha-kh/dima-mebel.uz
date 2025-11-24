@@ -1896,6 +1896,13 @@ body.glightbox-open {
 
 /* Mobile adjustments for lightbox */
 @media (max-width: 768px) {
+
+  /* Disable overflow hidden on mobile to prevent page jumping */
+  body.glightbox-open {
+    overflow-y: visible !important;
+    margin-right: 0 !important;
+  }
+
   .gslide-title {
     font-size: 1.2rem;
   }
