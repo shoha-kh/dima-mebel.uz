@@ -5,23 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>Дима Мебель - Изготовление мебели на заказ в Ташкенте | Кухни, Диваны, Шкафы</title>
-    <meta name="description" content="Дима Мебель - производство премиум мебели на заказ в Ташкенте. Кухонная, корпусная и мягкая мебель индивидуального дизайна. Качественные материалы, собственное производство.">
-    <meta name="keywords" content="мебель на заказ, мебель Ташкент, кухни на заказ, диваны на заказ, шкафы на заказ, корпусная мебель, мягкая мебель, мебель Чирчик, dima mebel">
+    <title id="page-title">Дима Мебель - Изготовление мебели на заказ в Ташкенте | Кухни, Диваны, Шкафы</title>
+    <meta name="description" id="page-description" content="Дима Мебель - производство премиум мебели на заказ в Ташкенте. Кухонная, корпусная и мягкая мебель индивидуального дизайна. Качественные материалы, собственное производство.">
+    <meta name="keywords" content="мебель на заказ, мебель Ташкент, кухни на заказ, диваны на заказ, шкафы на заказ, корпусная мебель, мягкая мебель, мебель Чирчик, dima mebel, buyurtma bo'yicha mebel, Toshkent mebel, oshxonalar, divanlar, shkaflar">
     <meta name="author" content="Дима Мебель">
     <meta name="robots" content="index, follow">
     <meta name="language" content="Russian, Uzbek">
+    
+    <!-- Alternate Language Meta -->
+    <link rel="alternate" hreflang="ru" href="https://dima-mebel.uz/" />
+    <link rel="alternate" hreflang="uz" href="https://dima-mebel.uz/?lang=uz" />
+    <link rel="alternate" hreflang="x-default" href="https://dima-mebel.uz/" />
     <meta name="geo.region" content="UZ-TK">
     <meta name="geo.placename" content="Чирчик, Ташкентская область">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://dima-mebel.uz/">
-    <meta property="og:title" content="Дима Мебель - Изготовление мебели на заказ в Ташкенте">
-    <meta property="og:description" content="Производство премиум мебели на заказ. Кухни, диваны, шкафы индивидуального дизайна.">
+    <meta property="og:url" id="og-url" content="https://dima-mebel.uz/">
+    <meta property="og:title" id="og-title" content="Дима Мебель - Изготовление мебели на заказ в Ташкенте">
+    <meta property="og:description" id="og-description" content="Производство премиум мебели на заказ. Кухни, диваны, шкафы индивидуального дизайна.">
     <meta property="og:image" content="https://dima-mebel.uz/images/og-image.jpg">
-    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale" id="og-locale" content="ru_RU">
     <meta property="og:locale:alternate" content="uz_UZ">
+    <meta property="og:locale:alternate" content="ru_RU">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -36,12 +42,16 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://dima-mebel.uz/">
     
+    <!-- GLightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    
     <!-- Schema.org structured data -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" id="schema-data">
     {
       "@context": "https://schema.org",
       "@type": "FurnitureStore",
       "name": "Дима Мебель",
+      "alternateName": "Dima Mebel",
       "image": "https://dima-mebel.uz/images/logo.jpg",
       "url": "https://dima-mebel.uz",
       "telephone": "+998-XX-XXX-XX-XX",
@@ -71,7 +81,20 @@
         "closes": "18:00"
       },
       "priceRange": "$$$$",
-      "description": "Производство премиум мебели на заказ: кухни, диваны, шкафы. Индивидуальный дизайн и качественные материалы."
+      "description": "Производство премиум мебели на заказ: кухни, диваны, шкафы. Индивидуальный дизайн и качественные материалы.",
+      "inLanguage": ["ru", "uz"],
+      "availableLanguage": [
+        {
+          "@type": "Language",
+          "name": "Russian",
+          "alternateName": "ru"
+        },
+        {
+          "@type": "Language",
+          "name": "Uzbek",
+          "alternateName": "uz"
+        }
+      ]
     }
     </script>
     
@@ -181,6 +204,20 @@
                                 Сроки изготовления зависят от сложности заказа
                             </p>
                         </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <h3 data-ru="Профессиональная сборка" data-uz="Professional yig'ilish va o'rnatish">Профессиональная сборка</h3>
+                            <p data-ru="Доставка и установка мебели опытными мастерами с гарантией" data-uz="Kafolat bilan tajribali ustalar tomonidan mebel yetkazib berish va o'rnatish">
+                                Доставка и установка мебели опытными мастерами с гарантией
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <h3 data-ru="Гарантия качества" data-uz="Sifat kafolati">Гарантия качества</h3>
+                            <p data-ru="Предоставляем официальную гарантию на всю производимую мебель" data-uz="Ishlab chiqarilgan barcha mebellarga rasmiy kafolat beramiz">
+                                Предоставляем официальную гарантию на всю производимую мебель
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -209,28 +246,28 @@
                 <article class="service-card">
                     <div class="service-icon">🛋️</div>
                     <h3 data-ru="Мягкая мебель" data-uz="Yumshoq mebel">Мягкая мебель</h3>
-                    <p data-ru="Диваны, кресла, пуфы любых форм и размеров. Качественная обивка, надежный каркас, современные наполнители." data-uz="Har qanday shakl va o'lchamdagi divanlar, kreslo va puflar. Sifatli qoplama, ishonchli karkas, zamonaviy to'ldirgichlar.">
+                    <p data-ru="Диваны, кресла, пуфы любых форм и размеров. Качественная обивка, надежный каркас, современные наполнители." data-uz="Har qanday shakl va o'lchamdagi divanlar, kreslolar va yostiqlar. Sifatli qoplama, ishonchli skelet, zamonaviy to'ldirgichlar.">
                         Диваны, кресла, пуфы любых форм и размеров. Качественная обивка, надежный каркас, современные наполнители.
                     </p>
                 </article>
                 <article class="service-card">
                     <div class="service-icon">🚪</div>
                     <h3 data-ru="Корпусная мебель" data-uz="Korpus mebellari">Корпусная мебель</h3>
-                    <p data-ru="Шкафы, шкафы-купе, прихожие, стенки. Оптимальное использование пространства и функциональность." data-uz="Shkaflar, shkaf-kupeler, koridorlar, devorlar. Makonni optimal ishlatish va funktsionallik.">
+                    <p data-ru="Шкафы, шкафы-купе, прихожие, стенки. Оптимальное использование пространства и функциональность." data-uz="Shkaflar, shkaf-kupeler, kirish xonalari, devor mebellar. Makondan optimal foydalanish va funktsionallik.">
                         Шкафы, шкафы-купе, прихожие, стенки. Оптимальное использование пространства и функциональность.
                     </p>
                 </article>
                 <article class="service-card">
                     <div class="service-icon">🎨</div>
                     <h3 data-ru="Индивидуальный дизайн" data-uz="Individual dizayn">Индивидуальный дизайн</h3>
-                    <p data-ru="Разработка уникальных дизайн-проектов мебели. Воплощаем самые смелые идеи в реальность." data-uz="Mebelning noyob dizayn loyihalarini ishlab chiqish. Eng dadil g'oyalarni amalga oshiramiz.">
+                    <p data-ru="Разработка уникальных дизайн-проектов мебели. Воплощаем самые смелые идеи в реальность." data-uz="Mebelning noyob dizayn loyihalarini ishlab chiqish. Eng jasur g'oyalarni hayotga tatbiq etamiz.">
                         Разработка уникальных дизайн-проектов мебели. Воплощаем самые смелые идеи в реальность.
                     </p>
                 </article>
                 <article class="service-card">
                     <div class="service-icon">🛠️</div>
                     <h3 data-ru="Гарантия качества" data-uz="Sifat kafolati">Гарантия качества</h3>
-                    <p data-ru="Предоставляем гарантию на всю изготовленную мебель. Используем долговечные материалы и фурнитуру." data-uz="Barcha ishlab chiqarilgan mebelga kafolat beramiz. Uzoq muddatli materiallar va jihozlardan foydalanamiz.">
+                    <p data-ru="Предоставляем гарантию на всю изготовленную мебель. Используем долговечные материалы и фурнитуру." data-uz="Barcha ishlab chiqarilgan mebelga kafolat beramiz. Uzoq xizmat qiladigan materiallar va jihozlardan foydalanamiz.">
                         Предоставляем гарантию на всю изготовленную мебель. Используем долговечные материалы и фурнитуру.
                     </p>
                 </article>
@@ -266,111 +303,267 @@
             </div>
 
             <!-- Gallery Grid -->
-            <div class="gallery-grid">
-                <!-- Kitchen Items -->
-                <div class="gallery-item" data-category="kitchen">
-                    <img src="https://images.unsplash.com/photo-1556912167-f556f1f39faa?w=800&q=80" alt="Современная кухня премиум класса" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h3 data-ru="Современная кухня" data-uz="Zamonaviy oshxona">Современная кухня</h3>
-                        <p data-ru="Премиум материалы" data-uz="Premium materiallar">Премиум материалы</p>
+            <div class="gallery-posts">
+                
+                <!-- Post 1: Современная кухня (Кухни) -->
+                <div class="gallery-post" data-category="kitchen">
+                    <div class="post-preview">
+                        <div class="post-slideshow">
+                            <img src="https://images.unsplash.com/photo-1556912167-f556f1f39faa?w=800&q=80" alt="Современная кухня - вид 1" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1565183928294-7d22f464f937?w=800&q=80" alt="Современная кухня - вид 2" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Современная кухня - вид 3" loading="lazy">
+                        </div>
+                        <div class="post-overlay">
+                            <h3 data-ru="Современная кухня" data-uz="Zamonaviy oshxona">Современная кухня</h3>
+                            <p data-ru="Премиум материалы" data-uz="Premium materiallar">Премиум материалы</p>
+                        </div>
+                        <div class="post-info">
+                            <span class="photo-count">3 фото</span>
+                        </div>
                     </div>
-                </div>
-                <div class="gallery-item" data-category="kitchen">
-                    <img src="https://images.unsplash.com/photo-1565183928294-7d22f464f937?w=800&q=80" alt="Кухня с островом" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h3 data-ru="Кухня с островом" data-uz="Orol bilan oshxona">Кухня с островом</h3>
-                        <p data-ru="Индивидуальный проект" data-uz="Individual loyiha">Индивидуальный проект</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="kitchen">
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Классическая кухня" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h3 data-ru="Классическая кухня" data-uz="Klassik oshxona">Классическая кухня</h3>
-                        <p data-ru="Элегантный дизайн" data-uz="Nafis dizayn">Элегантный дизайн</p>
-                    </div>
-                </div>
-
-                <!-- Soft Furniture Items -->
-                <div class="gallery-item" data-category="soft">
-                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Угловой диван премиум" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h3 data-ru="Угловой диван" data-uz="Burchak divan">Угловой диван</h3>
-                        <p data-ru="Премиум обивка" data-uz="Premium qoplama">Премиум обивка</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="soft">
-                    <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=800&q=80" alt="Современный диван" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h3 data-ru="Современный диван" data-uz="Zamonaviy divan">Современный диван</h3>
-                        <p data-ru="Модный дизайн" data-uz="Moda dizayni">Модный дизайн</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="soft">
-                    <img src="https://images.unsplash.com/photo-1550254478-ead40cc54513?w=800&q=80" alt="Кресла премиум класса" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h3 data-ru="Кресла премиум" data-uz="Premium kreslo">Кресла премиум</h3>
-                        <p data-ru="Высокий комфорт" data-uz="Yuqori qulaylik">Высокий комфорт</p>
+                    <div class="post-hidden-images" style="display: none;">
+                        <a href="https://images.unsplash.com/photo-1556912167-f556f1f39faa?w=1200&q=80" class="glightbox" data-gallery="post-1" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1565183928294-7d22f464f937?w=1200&q=80" class="glightbox" data-gallery="post-1" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80" class="glightbox" data-gallery="post-1" data-glightbox="type: image"></a>
                     </div>
                 </div>
 
-                <!-- Wardrobe Items -->
-                <div class="gallery-item" data-category="wardrobe">
-                    <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80" alt="Шкаф-купе на заказ" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h3 data-ru="Шкаф-купе" data-uz="Shkaf-kupe">Шкаф-купе</h3>
-                        <p data-ru="Максимум пространства" data-uz="Maksimal joy">Максимум пространства</p>
+                <!-- Post 2: Угловой диван (Мягкая мебель) -->
+                <div class="gallery-post" data-category="soft">
+                    <div class="post-preview">
+                        <div class="post-slideshow">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Угловой диван - вид 1" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=800&q=80" alt="Угловой диван - вид 2" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1550254478-ead40cc54513?w=800&q=80" alt="Угловой диван - вид 3" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800&q=80" alt="Угловой диван - вид 4" loading="lazy">
+                        </div>
+                        <div class="post-overlay">
+                            <h3 data-ru="Угловой диван" data-uz="Burchak divan">Угловой диван</h3>
+                            <p data-ru="Премиум обивка" data-uz="Premium qoplama">Премиум обивка</p>
+                        </div>
+                        <div class="post-info">
+                            <span class="photo-count">4 фото</span>
+                        </div>
                     </div>
-                </div>
-                <div class="gallery-item" data-category="wardrobe">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Гардеробная система" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h3 data-ru="Гардеробная" data-uz="Garderob">Гардеробная</h3>
-                        <p data-ru="Удобная организация" data-uz="Qulay tashkilot">Удобная организация</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="wardrobe">
-                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="Встроенный шкаф" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h3 data-ru="Встроенный шкаф" data-uz="O'rnatilgan shkaf">Встроенный шкаф</h3>
-                        <p data-ru="Под любой интерьер" data-uz="Har qanday interer uchun">Под любой интерьер</p>
-                    </div>
-                </div>
-
-                <!-- Video Item -->
-                <div class="gallery-item video-item" data-category="all">
-                    <div class="video-wrapper">
-                        <video poster="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80" controls>
-                            <source src="#" type="video/mp4">
-                        </video>
-                        <div class="video-play-icon">▶</div>
-                    </div>
-                    <div class="gallery-overlay">
-                        <h3 data-ru="Видеообзор мебели" data-uz="Mebel video ko'rish">Видеообзор мебели</h3>
-                        <p data-ru="Процесс изготовления" data-uz="Ishlab chiqarish jarayoni">Процесс изготовления</p>
+                    <div class="post-hidden-images" style="display: none;">
+                        <a href="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80" class="glightbox" data-gallery="post-2" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=1200&q=80" class="glightbox" data-gallery="post-2" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1550254478-ead40cc54513?w=1200&q=80" class="glightbox" data-gallery="post-2" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=1200&q=80" class="glightbox" data-gallery="post-2" data-glightbox="type: image"></a>
                     </div>
                 </div>
 
-                <!-- More Kitchen -->
-                <div class="gallery-item" data-category="kitchen">
-                    <img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=800&q=80" alt="Минималистичная кухня" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h3 data-ru="Минимализм" data-uz="Minimalizm">Минимализм</h3>
-                        <p data-ru="Чистые линии" data-uz="Toza chiziqlar">Чистые линии</p>
+                <!-- Post 3: Шкаф-купе (Шкафы) -->
+                <div class="gallery-post" data-category="wardrobe">
+                    <div class="post-preview">
+                        <div class="post-slideshow">
+                            <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80" alt="Шкаф-купе - вид 1" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Шкаф-купе - вид 2" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="Шкаф-купе - вид 3" loading="lazy">
+                        </div>
+                        <div class="post-overlay">
+                            <h3 data-ru="Шкаф-купе" data-uz="Shkaf-kupe">Шкаф-купе</h3>
+                            <p data-ru="Максимум пространства" data-uz="Maksimal joy">Максимум пространства</p>
+                        </div>
+                        <div class="post-info">
+                            <span class="photo-count">3 фото</span>
+                        </div>
+                    </div>
+                    <div class="post-hidden-images" style="display: none;">
+                        <a href="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1200&q=80" class="glightbox" data-gallery="post-3" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" class="glightbox" data-gallery="post-3" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80" class="glightbox" data-gallery="post-3" data-glightbox="type: image"></a>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="soft">
-                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800&q=80" alt="Модульный диван" loading="lazy">
-                    <div class="gallery-overlay">
-                        <h3 data-ru="Модульный диван" data-uz="Modul divan">Модульный диван</h3>
-                        <p data-ru="Гибкая конфигурация" data-uz="Moslashuvchan konfiguratsiya">Гибкая конфигурация</p>
+
+                <!-- Post 4: Кухня с островом (Кухни) -->
+                <div class="gallery-post" data-category="kitchen">
+                    <div class="post-preview">
+                        <div class="post-slideshow">
+                            <img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=800&q=80" alt="Кухня с островом - вид 1" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1556912167-f556f1f39faa?w=800&q=80" alt="Кухня с островом - вид 2" loading="lazy">
+                        </div>
+                        <div class="post-overlay">
+                            <h3 data-ru="Кухня с островом" data-uz="Orol bilan oshxona">Кухня с островом</h3>
+                            <p data-ru="Индивидуальный проект" data-uz="Individual loyiha">Индивидуальный проект</p>
+                        </div>
+                        <div class="post-info">
+                            <span class="photo-count">2 фото</span>
+                        </div>
+                    </div>
+                    <div class="post-hidden-images" style="display: none;">
+                        <a href="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=1200&q=80" class="glightbox" data-gallery="post-4" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1556912167-f556f1f39faa?w=1200&q=80" class="glightbox" data-gallery="post-4" data-glightbox="type: image"></a>
                     </div>
                 </div>
+
+                <!-- Post 5: Премиум диван (Мягкая мебель) -->
+                <div class="gallery-post" data-category="soft">
+                    <div class="post-preview">
+                        <div class="post-slideshow">
+                            <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=800&q=80" alt="Премиум диван - вид 1" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Премиум диван - вид 2" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1550254478-ead40cc54513?w=800&q=80" alt="Премиум диван - вид 3" loading="lazy">
+                        </div>
+                        <div class="post-overlay">
+                            <h3 data-ru="Премиум диван" data-uz="Premium divan">Премиум диван</h3>
+                            <p data-ru="Модный дизайн" data-uz="Moda dizayni">Модный дизайн</p>
+                        </div>
+                        <div class="post-info">
+                            <span class="photo-count">3 фото</span>
+                        </div>
+                    </div>
+                    <div class="post-hidden-images" style="display: none;">
+                        <a href="https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=1200&q=80" class="glightbox" data-gallery="post-5" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80" class="glightbox" data-gallery="post-5" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1550254478-ead40cc54513?w=1200&q=80" class="glightbox" data-gallery="post-5" data-glightbox="type: image"></a>
+                    </div>
+                </div>
+
+                <!-- Post 6: Встроенная гардеробная (Шкафы) -->
+                <div class="gallery-post" data-category="wardrobe">
+                    <div class="post-preview">
+                        <div class="post-slideshow">
+                            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="Гардеробная - вид 1" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80" alt="Гардеробная - вид 2" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Гардеробная - вид 3" loading="lazy">
+                        </div>
+                        <div class="post-overlay">
+                            <h3 data-ru="Встроенная гардеробная" data-uz="O'rnatilgan garderob">Встроенная гардеробная</h3>
+                            <p data-ru="Удобная организация" data-uz="Qulay tashkilot">Удобная организация</p>
+                        </div>
+                        <div class="post-info">
+                            <span class="photo-count">3 фото</span>
+                        </div>
+                    </div>
+                    <div class="post-hidden-images" style="display: none;">
+                        <a href="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                    </div>
+                </div>
+
+                                <!-- Post 6: Встроенная гардеробная (Шкафы) -->
+                <div class="gallery-post" data-category="wardrobe">
+                    <div class="post-preview">
+                        <div class="post-slideshow">
+                            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="Гардеробная - вид 1" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80" alt="Гардеробная - вид 2" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Гардеробная - вид 3" loading="lazy">
+                        </div>
+                        <div class="post-overlay">
+                            <h3 data-ru="Встроенная гардеробная" data-uz="O'rnatilgan garderob">Встроенная гардеробная</h3>
+                            <p data-ru="Удобная организация" data-uz="Qulay tashkilot">Удобная организация</p>
+                        </div>
+                        <div class="post-info">
+                            <span class="photo-count">3 фото</span>
+                        </div>
+                    </div>
+                    <div class="post-hidden-images" style="display: none;">
+                        <a href="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                    </div>
+                </div>
+
+                                <!-- Post 6: Встроенная гардеробная (Шкафы) -->
+                <div class="gallery-post" data-category="wardrobe">
+                    <div class="post-preview">
+                        <div class="post-slideshow">
+                            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="Гардеробная - вид 1" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80" alt="Гардеробная - вид 2" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Гардеробная - вид 3" loading="lazy">
+                        </div>
+                        <div class="post-overlay">
+                            <h3 data-ru="Встроенная гардеробная" data-uz="O'rnatilgan garderob">Встроенная гардеробная</h3>
+                            <p data-ru="Удобная организация" data-uz="Qulay tashkilot">Удобная организация</p>
+                        </div>
+                        <div class="post-info">
+                            <span class="photo-count">3 фото</span>
+                        </div>
+                    </div>
+                    <div class="post-hidden-images" style="display: none;">
+                        <a href="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                    </div>
+                </div>
+
+                                <!-- Post 6: Встроенная гардеробная (Шкафы) -->
+                <div class="gallery-post" data-category="wardrobe">
+                    <div class="post-preview">
+                        <div class="post-slideshow">
+                            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="Гардеробная - вид 1" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80" alt="Гардеробная - вид 2" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Гардеробная - вид 3" loading="lazy">
+                        </div>
+                        <div class="post-overlay">
+                            <h3 data-ru="Встроенная гардеробная" data-uz="O'rnatilgan garderob">Встроенная гардеробная</h3>
+                            <p data-ru="Удобная организация" data-uz="Qulay tashkilot">Удобная организация</p>
+                        </div>
+                        <div class="post-info">
+                            <span class="photo-count">3 фото</span>
+                        </div>
+                    </div>
+                    <div class="post-hidden-images" style="display: none;">
+                        <a href="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                    </div>
+                </div>
+
+                                <!-- Post 6: Встроенная гардеробная (Шкафы) -->
+                <div class="gallery-post" data-category="wardrobe">
+                    <div class="post-preview">
+                        <div class="post-slideshow">
+                            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="Гардеробная - вид 1" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80" alt="Гардеробная - вид 2" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Гардеробная - вид 3" loading="lazy">
+                        </div>
+                        <div class="post-overlay">
+                            <h3 data-ru="Встроенная гардеробная" data-uz="O'rnatilgan garderob">Встроенная гардеробная</h3>
+                            <p data-ru="Удобная организация" data-uz="Qulay tashkilot">Удобная организация</p>
+                        </div>
+                        <div class="post-info">
+                            <span class="photo-count">3 фото</span>
+                        </div>
+                    </div>
+                    <div class="post-hidden-images" style="display: none;">
+                        <a href="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                    </div>
+                </div>
+
+                                <!-- Post 6: Встроенная гардеробная (Шкафы) -->
+                <div class="gallery-post" data-category="wardrobe">
+                    <div class="post-preview">
+                        <div class="post-slideshow">
+                            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="Гардеробная - вид 1" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80" alt="Гардеробная - вид 2" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Гардеробная - вид 3" loading="lazy">
+                        </div>
+                        <div class="post-overlay">
+                            <h3 data-ru="Встроенная гардеробная" data-uz="O'rnatilgan garderob">Встроенная гардеробная</h3>
+                            <p data-ru="Удобная организация" data-uz="Qulay tashkilot">Удобная организация</p>
+                        </div>
+                        <div class="post-info">
+                            <span class="photo-count">3 фото</span>
+                        </div>
+                    </div>
+                    <div class="post-hidden-images" style="display: none;">
+                        <a href="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                        <a href="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" class="glightbox" data-gallery="post-6" data-glightbox="type: image"></a>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Load More Button -->
             <div class="gallery-load-more">
-                <button class="btn btn-secondary" id="loadMoreBtn" data-ru="Загрузить еще" data-uz="Ko'proq yuklash">
-                    Загрузить еще
+                <button class="btn btn-primary" id="loadMoreBtn" data-ru="Показать еще" data-uz="Yana ko'rsatish">
+                    Показать еще
                 </button>
             </div>
         </div>
@@ -507,7 +700,7 @@
                     <ul class="footer-links">
                         <li data-ru="Кухни на заказ" data-uz="Buyurtma bo'yicha oshxonalar">Кухни на заказ</li>
                         <li data-ru="Мягкая мебель" data-uz="Yumshoq mebel">Мягкая мебель</li>
-                        <li data-ru="Корпусная мебель" data-uz="Korpus mebel">Корпусная мебель</li>
+                        <li data-ru="Корпусная мебель" data-uz="Korpus mebellari">Корпусная мебель</li>
                         <li data-ru="Индивидуальный дизайн" data-uz="Individual dizayn">Индивидуальный дизайн</li>
                     </ul>
                 </div>
@@ -543,6 +736,8 @@
         </svg>
     </a>
 
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

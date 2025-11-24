@@ -58,20 +58,55 @@ const languageSwitcher = {
         const translations = {
             ru: {
                 title: 'Дима Мебель - Изготовление мебели на заказ в Ташкенте | Кухни, Диваны, Шкафы',
-                description: 'Дима Мебель - производство премиум мебели на заказ в Ташкенте. Кухонная, корпусная и мягкая мебель индивидуального дизайна. Качественные материалы, собственное производство.'
+                description: 'Дима Мебель - производство премиум мебели на заказ в Ташкенте. Кухонная, корпусная и мягкая мебель индивидуального дизайна. Качественные материалы, собственное производство.',
+                ogTitle: 'Дима Мебель - Изготовление мебели на заказ в Ташкенте',
+                ogDescription: 'Производство премиум мебели на заказ. Кухни, диваны, шкафы индивидуального дизайна.',
+                locale: 'ru_RU',
+                url: 'https://dima-mebel.uz/'
             },
             uz: {
                 title: 'Dima Mebel - Toshkentda buyurtma bo\'yicha mebel ishlab chiqarish | Oshxonalar, Divanlar, Shkaflar',
-                description: 'Dima Mebel - Toshkentda buyurtma bo\'yicha premium mebel ishlab chiqarish. Individual dizayndagi oshxona, korpus va yumshoq mebel. Sifatli materiallar, o\'z ishlab chiqarishimiz.'
+                description: 'Dima Mebel - Toshkentda buyurtma bo\'yicha premium mebel ishlab chiqarish. Individual dizayndagi oshxona, korpus va yumshoq mebel. Sifatli materiallar, o\'z ishlab chiqarishimiz.',
+                ogTitle: 'Dima Mebel - Toshkentda buyurtma bo\'yicha mebel ishlab chiqarish',
+                ogDescription: 'Buyurtma bo\'yicha premium mebel ishlab chiqarish. Individual dizayndagi oshxonalar, divanlar, shkaflar.',
+                locale: 'uz_UZ',
+                url: 'https://dima-mebel.uz/?lang=uz'
             }
         };
         
-        document.title = translations[lang].title;
+        const content = translations[lang];
         
-        const metaDescription = document.querySelector('meta[name="description"]');
+        // Update page title
+        document.title = content.title;
+        const titleEl = document.getElementById('page-title');
+        if (titleEl) titleEl.textContent = content.title;
+        
+        // Update meta description
+        const metaDescription = document.getElementById('page-description');
         if (metaDescription) {
-            metaDescription.content = translations[lang].description;
+            metaDescription.content = content.description;
         }
+        
+        // Update Open Graph tags
+        const ogTitle = document.getElementById('og-title');
+        if (ogTitle) ogTitle.content = content.ogTitle;
+        
+        const ogDescription = document.getElementById('og-description');
+        if (ogDescription) ogDescription.content = content.ogDescription;
+        
+        const ogLocale = document.getElementById('og-locale');
+        if (ogLocale) ogLocale.content = content.locale;
+        
+        const ogUrl = document.getElementById('og-url');
+        if (ogUrl) ogUrl.content = content.url;
+        
+        // Update canonical URL
+        let canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) {
+            canonical.href = content.url;
+        }
+        
+        console.log(`✓ SEO meta tags updated for ${lang.toUpperCase()} language`);
     }
 };
 
@@ -141,7 +176,7 @@ const gallery = {
     
     init() {
         this.filterButtons = document.querySelectorAll('.filter-btn');
-        this.galleryItems = document.querySelectorAll('.gallery-item');
+        this.galleryPosts = document.querySelectorAll('.gallery-post');
         this.loadMoreBtn = document.getElementById('loadMoreBtn');
         
         // Set up filter buttons
@@ -166,8 +201,8 @@ const gallery = {
         // Initialize visibility
         this.updateVisibility();
         
-        // Video play on click
-        this.initVideoPlayers();
+        // Post click handlers
+        this.initPostClickHandlers();
         
         // Lightbox functionality
         this.initLightbox();
@@ -182,35 +217,51 @@ const gallery = {
     updateVisibility() {
         let visibleCount = 0;
         
-        this.galleryItems.forEach((item, index) => {
-            const category = item.dataset.category;
+        this.galleryPosts.forEach((post, index) => {
+            const category = post.dataset.category;
             const matchesFilter = this.currentFilter === 'all' || category === this.currentFilter;
             
             if (matchesFilter && visibleCount < this.itemsToShow) {
-                item.style.display = 'block';
-                item.classList.add('show');
+                post.style.display = 'block';
+                post.classList.add('show');
                 visibleCount++;
             } else if (matchesFilter) {
-                item.style.display = 'none';
+                post.style.display = 'none';
             } else {
-                item.style.display = 'none';
-                item.classList.remove('show');
+                post.style.display = 'none';
+                post.classList.remove('show');
             }
         });
         
         // Show/hide load more button
-        const totalMatchingItems = Array.from(this.galleryItems).filter(item => {
-            return this.currentFilter === 'all' || item.dataset.category === this.currentFilter;
+        const totalMatchingItems = Array.from(this.galleryPosts).filter(post => {
+            return this.currentFilter === 'all' || post.dataset.category === this.currentFilter;
         }).length;
         
         if (this.loadMoreBtn) {
-            this.loadMoreBtn.style.display = visibleCount < totalMatchingItems ? 'inline-block' : 'none';
+            const shouldShow = visibleCount < totalMatchingItems;
+            this.loadMoreBtn.style.display = shouldShow ? 'inline-block' : 'none';
+            console.log(`Visible: ${visibleCount}, Total: ${totalMatchingItems}, Show button: ${shouldShow}`);
         }
     },
     
     loadMore() {
-        this.itemsToShow += 6;
+        this.itemsToShow += 9;
         this.updateVisibility();
+    },
+    
+    initPostClickHandlers() {
+        // When clicking on a post preview, open the first image in lightbox
+        this.galleryPosts.forEach(post => {
+            const preview = post.querySelector('.post-preview');
+            const firstLink = post.querySelector('.post-hidden-images .glightbox');
+            
+            if (preview && firstLink) {
+                preview.addEventListener('click', () => {
+                    firstLink.click();
+                });
+            }
+        });
     },
     
     initVideoPlayers() {
@@ -239,17 +290,45 @@ const gallery = {
     },
     
     initLightbox() {
-        // Simple lightbox - can be enhanced with a library
-        this.galleryItems.forEach(item => {
-            const img = item.querySelector('img');
-            if (img) {
-                item.addEventListener('click', () => {
-                    // You can add lightbox functionality here
-                    // For now, just log
-                    console.log('Image clicked:', img.src);
-                });
-            }
-        });
+        // Initialize GLightbox with custom settings
+        if (typeof GLightbox !== 'undefined') {
+            const lightbox = GLightbox({
+                touchNavigation: true,
+                loop: true,
+                autoplayVideos: true,
+                openEffect: 'zoom',
+                closeEffect: 'fade',
+                slideEffect: 'slide',
+                closeButton: true,
+                touchFollowAxis: true,
+                keyboardNavigation: true,
+                videosWidth: '960px',
+                skin: 'clean',
+                descPosition: 'bottom',
+                plyr: {
+                    css: 'https://cdn.plyr.io/3.7.8/plyr.css',
+                    js: 'https://cdn.plyr.io/3.7.8/plyr.js',
+                    config: {
+                        ratio: '16:9',
+                        youtube: {
+                            noCookie: true,
+                            rel: 0,
+                            showinfo: 0,
+                            iv_load_policy: 3
+                        },
+                        vimeo: {
+                            byline: false,
+                            portrait: false,
+                            title: false
+                        }
+                    }
+                }
+            });
+            
+            console.log('GLightbox initialized with', document.querySelectorAll('.glightbox').length, 'items in multiple galleries');
+        } else {
+            console.warn('GLightbox library not loaded');
+        }
     }
 };
 

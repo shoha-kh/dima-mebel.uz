@@ -515,42 +515,61 @@ ul {
   color: var(--white-color);
 }
 
-.gallery-grid {
+/* Gallery Posts Grid */
+.gallery-posts {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--spacing-md);
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
 }
 
-.gallery-item {
+/* Single Post Card */
+.gallery-post {
   position: relative;
-  overflow: hidden;
   border-radius: var(--radius-lg);
-  aspect-ratio: 4/3;
-  cursor: pointer;
+  overflow: hidden;
+  background: var(--white-color);
   box-shadow: var(--shadow-md);
   transition: var(--transition-medium);
+  cursor: pointer;
 }
 
-.gallery-item:hover {
-  transform: scale(1.03);
+.gallery-post:hover {
+  transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
 }
 
-.gallery-item img,
-.gallery-item video {
+/* Post Preview Container */
+.post-preview {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+/* Slideshow Container */
+.post-slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.post-slideshow img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: var(--transition-slow);
+  transition: transform 0.3s ease;
 }
 
-.gallery-item:hover img,
-.gallery-item:hover video {
-  transform: scale(1.1);
+.post-slideshow img:not(:first-child) {
+  display: none;
 }
 
-.gallery-overlay {
+.gallery-post:hover .post-slideshow img {
+  transform: scale(1.05);
+}
+
+/* Post Overlay */
+.post-overlay {
   position: absolute;
   inset: 0;
   background: var(--overlay-dark);
@@ -562,13 +581,14 @@ ul {
   transition: var(--transition-medium);
   padding: var(--spacing-md);
   text-align: center;
+  z-index: 5;
 }
 
-.gallery-item:hover .gallery-overlay {
+.gallery-post:hover .post-overlay {
   opacity: 1;
 }
 
-.gallery-overlay h3 {
+.post-overlay h3 {
   color: var(--white-color);
   font-size: 1.5rem;
   margin-bottom: var(--spacing-xs);
@@ -576,52 +596,55 @@ ul {
   transition: var(--transition-medium);
 }
 
-.gallery-overlay p {
+.post-overlay p {
   color: var(--secondary-color);
   font-size: 1rem;
   transform: translateY(20px);
   transition: var(--transition-medium) 0.1s;
 }
 
-.gallery-item:hover .gallery-overlay h3,
-.gallery-item:hover .gallery-overlay p {
+.gallery-post:hover .post-overlay h3,
+.gallery-post:hover .post-overlay p {
   transform: translateY(0);
 }
 
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.video-play-icon {
+/* Post Info Badge */
+.post-info {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70px;
-  height: 70px;
-  background: rgba(201, 169, 97, 0.9);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: var(--white-color);
-  pointer-events: none;
+  bottom: 12px;
+  right: 12px;
+  z-index: 10;
 }
 
-.gallery-load-more {
-  text-align: center;
+.photo-count {
+  background: rgba(0, 0, 0, 0.75);
+  color: var(--white-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hidden Images for Lightbox */
+.post-hidden-images {
+  display: none !important;
 }
 
 /* Gallery Filter Animation */
-.gallery-item.hide {
+.gallery-post.hide {
   display: none;
 }
 
-.gallery-item.show {
+.gallery-post.show {
   animation: fadeIn 0.5s ease;
+}
+
+/* Load More Button */
+.gallery-load-more {
+  text-align: center;
+  margin-top: var(--spacing-md);
 }
 
 /* ============================================
@@ -1136,6 +1159,12 @@ ul {
     --spacing-xl: 2.5rem;
   }
 
+  /* Gallery Posts */
+  .gallery-posts {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+  }
+
   /* Container */
   .container {
     padding: 0 var(--spacing-sm);
@@ -1497,6 +1526,17 @@ ul {
     --spacing-xl: 2rem;
   }
 
+  /* Gallery Posts */
+  .gallery-posts {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .photo-count {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+  }
+
   .container {
     padding: 0 var(--spacing-sm);
   }
@@ -1558,6 +1598,331 @@ ul {
 
   .language-switcher {
     right: 60px;
+  }
+}
+
+/* ============================================
+   GLIGHTBOX CUSTOM STYLES
+   ============================================ */
+
+/* Main overlay */
+.gslide-description {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  padding: 30px 20px 20px;
+  display: none !important;
+  /* Hide all descriptions */
+}
+
+.gslide-title {
+  display: none !important;
+  /* Hide title */
+}
+
+.gslide-desc {
+  display: none !important;
+  /* Hide description */
+}
+
+/* Navigation arrows */
+.gslide-inline .gslide-media {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border-radius: var(--radius-md);
+}
+
+.gnext,
+.gprev {
+  background: rgba(201, 169, 97, 0.9);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-medium);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gnext:hover,
+.gprev:hover {
+  background: rgba(201, 169, 97, 1);
+  transform: scale(1.1);
+}
+
+.gnext svg,
+.gprev svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--white-color);
+}
+
+/* Close button */
+.gclose {
+  background: rgba(201, 169, 97, 0.9);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-medium);
+  top: 20px;
+  right: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gclose:hover {
+  background: rgba(201, 169, 97, 1);
+  transform: rotate(90deg) scale(1.1);
+}
+
+.gclose svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--white-color);
+}
+
+/* Lightbox background */
+.glightbox-clean .goverlay {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+/* Loading animation */
+.gloader {
+  border: 3px solid rgba(201, 169, 97, 0.3);
+  border-top: 3px solid var(--secondary-color);
+}
+
+/* Counter */
+.gslide-number {
+  display: none !important;
+  /* Hide counter */
+}
+
+.gslide-description .gslide-title::after {
+  display: none !important;
+  /* Hide decorative line */
+}
+
+/* Video player customization */
+.gslide-media video {
+  border-radius: var(--radius-md);
+}
+
+/* Zoom animation */
+.gslide-image img {
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Slide container */
+.gslide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden !important;
+}
+
+/* Image wrapper */
+.gslide-image {
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden !important;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+.gslide-image img {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+}
+
+/* Gallery item hover effect enhancement */
+.gallery-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201, 169, 97, 0.1), rgba(44, 62, 80, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: var(--radius-lg);
+  z-index: 1;
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+}
+
+/* GLightbox container improvements */
+.glightbox-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999 !important;
+  overflow: hidden !important;
+}
+
+.glightbox-container .gslide-description {
+  display: none !important;
+  /* Hide description container */
+}
+
+/* Image container */
+.gslide-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden !important;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+.gslide-image img {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+}
+
+/* Counter display */
+.glightbox-container .gslide-title {
+  display: none !important;
+}
+
+/* Slide counter - Hidden */
+.gslide-number {
+  display: none !important;
+}
+
+/* Navigation buttons positioning */
+.glightbox-container .gnext {
+  right: 20px;
+}
+
+.glightbox-container .gprev {
+  left: 20px;
+}
+
+/* Smooth fade in animation */
+@keyframes gslideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.gslide-media {
+  animation: gslideIn 0.3s ease;
+  overflow: hidden !important;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Disable scroll on body when lightbox is open */
+body.glightbox-open {
+  overflow-y: hidden !important;
+  margin-right: 15px;
+  /* Compensate for scrollbar width */
+}
+
+/* Description is hidden - no animation needed */
+.gslide-description {
+  display: none !important;
+}
+
+/* Thumbnail navigation (if enabled) */
+.glightbox-container .gslide-inline {
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden !important;
+}
+
+/* Disable touch zoom and scroll */
+.gslide-image,
+.gslide-media,
+.ginner-container {
+  touch-action: none !important;
+  -ms-touch-action: none !important;
+}
+
+/* Prevent image from being larger than viewport */
+.gslide-image img {
+  touch-action: none !important;
+  -webkit-touch-callout: none !important;
+}
+
+/* Better video player styling */
+.gslide-media.gslide-video {
+  max-width: 90vw;
+  width: 100%;
+}
+
+.gslide-media iframe {
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile adjustments for lightbox */
+@media (max-width: 768px) {
+  .gslide-title {
+    font-size: 1.2rem;
+  }
+
+  .gslide-desc {
+    font-size: 0.9rem;
+  }
+
+  .gnext,
+  .gprev {
+    width: 40px;
+    height: 40px;
+  }
+
+  .gclose {
+    width: 36px;
+    height: 36px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .glightbox-container .gnext {
+    right: 10px;
+  }
+
+  .glightbox-container .gprev {
+    left: 10px;
   }
 }
 
