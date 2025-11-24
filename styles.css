@@ -228,6 +228,10 @@ ul {
   color: var(--primary-color);
 }
 
+.navbar.scrolled .mobile-menu-btn span {
+  background: var(--primary-color);
+}
+
 .nav-wrapper {
   display: flex;
   justify-content: space-between;
