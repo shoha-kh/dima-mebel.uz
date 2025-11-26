@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- HTTPS Redirect -->
+    <script>
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost') {
+            location.replace('https:' + window.location.href.substring(window.location.protocol.length));
+        }
+    </script>
+    
     <!-- SEO Meta Tags -->
     <title id="page-title">Дима Мебель - Изготовление мебели на заказ в Ташкенте | Кухни, Диваны, Шкафы</title>
     <meta name="description" id="page-description" content="Дима Мебель - производство премиум мебели на заказ в Ташкенте. Кухонная, корпусная и мягкая мебель индивидуального дизайна. Качественные материалы, собственное производство.">
